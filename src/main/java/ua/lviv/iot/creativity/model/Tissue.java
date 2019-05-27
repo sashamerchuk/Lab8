@@ -12,9 +12,6 @@ public class Tissue extends CreativityGood {
 
     private int width;
     private int height;
-    
-    @Enumerated(EnumType.STRING)
-    private Type type;
 
     public Tissue() {
     }

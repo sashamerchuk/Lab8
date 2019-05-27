@@ -5,15 +5,19 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import ua.lviv.iot.creativity.model.Tissue;
 import ua.lviv.iot.creativity.model.Type;
 import ua.lviv.iot.creativity.repository.TissueRepository;
 
-@SpringBootApplication
-@EntityScan("ua.lviv.iot")
-public class Lab8Application {
 
+@SpringBootApplication
+@EntityScan({"ua.lviv.iot.creativity.model"})
+@ComponentScan({"ua.lviv.iot.creativity.repository"})
+@EnableJpaRepositories({"ua.lviv.iot.creativity.repository"})
+public class Lab8Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Lab8Application.class, args);
 	} 
